@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: linear-gradient(-45deg, #ff6a00, #ee0979, #00c6ff, #0072ff);
+      background-size: 400% 400%;
+      animation: bg 8s ease infinite;
+    }
+
+    @keyframes bg {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .form-box {
+      width: 350px;
+      padding: 25px;
+      border-radius: 15px;
+
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    /* BUTTONS */
+    .btn {
+      width: 120px;
+      padding: 10px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 10px auto;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .next-btn {
+      background: #fff;
+      color: #000;
+    }
+
+    .submit-btn {
+      background: #00ff99;
+      color: #000;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* SUCCESS MESSAGE */
+    .message {
+      display: none;
+      text-align: center;
+      margin-top: 15px;
+      color: yellow;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="form-box">
+    <h2>Registration</h2>
+
+    <input type="text" placeholder="Full Name">
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <input type="text" placeholder="Phone Number">
+
+    <!-- BUTTONS -->
+    <button class="btn submit-btn" onclick="submitForm()">Submit</button>
+    <button class="btn next-btn" onclick="goNext()">Next</button>
+
+    <!-- SUCCESS MESSAGE -->
+    <p class="message" id="msg">✔ Registration Successful!</p>
+  </div>
+
+  <script>
+    function goNext() {
+      window.location.href = "thankyou.html";
+    }
+
+    function submitForm() {
+      // show success message first
+      document.getElementById("msg").style.display = "block";
+
+      // after 2 seconds go to thank you page
+      setTimeout(function() {
+        window.location.href = "thankyou.html";
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>

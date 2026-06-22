@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.container{
+    background:white;
+    width:100%;
+    max-width:600px;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+h1{
+    text-align:center;
+    color:#003366;
+    margin-bottom:20px;
+}
+
+.contact-info{
+    margin-bottom:20px;
+}
+
+.contact-info p{
+    margin:10px 0;
+    font-size:16px;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    background:#003366;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0055aa;
+}
+
+#successMessage{
+    display:none;
+    color:green;
+    text-align:center;
+    margin-top:15px;
+    font-size:18px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📞 Contact Us</h1>
+
+<div class="contact-info">
+    <p><b>College Name:</b> Visvesvaraya Technological University (VTU) Regional Campus, Kalaburagi</p>
+    <p><b>Address:</b> Rajapura, Kusnoor Road, Kalaburagi (Gulbarga) – 585106, Karnataka, India.</p>
+    <p><b>Phone:</b> +91 9876543210</p>
+    <p><b>Email:</b> vtugulbarga@vtu.ac.in</p>
+</div>
+
+<form id="contactForm">
+
+<label>Your Name</label>
+<input type="text" placeholder="Enter Your Name" required>
+
+<label>Your Email</label>
+<input type="email" placeholder="Enter Your Email" required>
+
+<label>Your Message</label>
+<textarea rows="5" placeholder="I would like to know more about the MCA course and admission process."></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+<div id="successMessage">
+✅ Message Sent Successfully!
+</div>
+
+</div>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event){
+    event.preventDefault();
+    document.getElementById("successMessage").style.display = "block";
+    this.reset();
+});
+</script>
+<div class="next-btn-container">
+    <a href="registration.html" class="next-btn">Next Page →</a>
+</div>
+
+</body>
+</html>
